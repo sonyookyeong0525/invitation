@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김은주님의 고희연에 초대합니다</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=iadfd6dz8k"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main_container">
+        <span class="sub_title">70th BIRTHDAY PARTY</span>
+        <!-- 상단 헤더 -->
+        <div class="main_txt">
+            <img src="img/bg_frw.png" alt="" class="bg_img">
+            <h1 class="main_title">
+                <span>김은주</span>님의 <br>
+                고희연에 <br>
+                초대합니다
+            </h1>
+            <p>
+                2026년 6월 27일 토요일 오후 1시 <br>
+                장-------------------------소
+            </p>
+        </div>
+        <div class="text">
+            <h2>모시는 글</h2>
+            <p class="greeting_text">
+                언제나 든든한 버팀목이 되어주신<br>
+                저희 어머니의 일흔번째 생신을 맞이하였습니다.<br><br>
+                오늘날 저희가 있기까지 아낌없는 사랑을 주신<br>
+                어머니의 은혜에 감사하며,<br>
+                작게나마 축하의 자리를 마련하였습니다.<br><br>
+                바쁘시더라도 부디 참석하셔서<br>
+                어머니의 앞날을 함께 축복해 주시고<br>
+                자리를 빛내주시면 감사하겠습니다.
+            </p>
+        </div>
+        <div class="calendar_container">
+            <h2>행사일</h2>
+            <div class="event_header">2026년 6월 27일 토요일 오후 1시</div>
+            <!-- 6월 달력 -->
+            <table class="calendar_table">
+                <thead>
+                    <tr>
+                        <th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                    </tr>
+                    <tr>
+                        <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+                        <!-- 27일 하이라이트 클래스 적용 -->
+                        <td class="highlight"><span class="date_num">27</span></td>
+                    </tr>
+                    <tr>
+                        <td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+                <!-- 실시간 카운트다운 타이머 -->
+            <div class="countdown_wrap">
+                <div class="time_box">
+                    <div class="time_num" id="days">00</div>
+                    <div class="time_label">Days</div>
+                </div>
+                <div class="time_box">
+                    <div class="time_num" id="hours">00</div>
+                    <div class="time_label">Hours</div>
+                </div>
+                <div class="time_box">
+                    <div class="time_num" id="minutes">00</div>
+                    <div class="time_label">Minutes</div>
+                </div>
+                <div class="time_box">
+                    <div class="time_num" id="seconds">00</div>
+                    <div class="time_label">Seconds</div>
+                </div>
+            </div>
+                <!-- 하단 남은 일수 안내 문구 -->
+            <div class="dday-message">
+                김은주님의 생신이 <span id="text_dday">0</span>일 남았습니다
+            </div>
+        </div>
+        <!-- 지도 -->
+        <div class="map-container">
+            <h2>오시는 길</h2>
+            <div class="address-info">
+                <p class="addr-main">서울 영등포구 영등포로 33</p>
+                <p class="addr-sub">플로렌스 오목교점 8층 카라홀</p>
+                <p class="addr-tel">Tel. 02-1234-5678</p>
+            </div>
+            <div class="map-image-wrap">
+                <div id="map" style="width:100%;height:400px;"></div>
+                <img src="https://via.placeholder.com/400x250/eef2f5/999999?text=NAVER+MAP+IMAGE" alt="지도 약도" class="map-img">
+                <div class="map-toggle-btn">
+                <span class="btn-item active">일반</span><span class="btn-item">위성</span>
+            </div>
+            <div class="map-attribution">© NAVER Corp.</div>
+            <div class="map-scale">300m</div>
+    </div>
+
+    <div class="navi-links">
+        <a href="https://naver.me/5g486sDU" class="navi-btn">
+            <img src="https://img.icons8.com/color/48/naver.png" alt="네이버" class="icon-app"> 네이버지도
+        </a>
+        <span class="v-line"></span>
+        <a href="#" class="navi-btn">
+            <span class="icon-tmap">T</span> 티맵
+        </a>
+        <span class="v-line"></span>
+        <a href="#" class="navi-btn">
+            <img src="https://img.icons8.com/color/48/kakaotalk.png" alt="카카오" class="icon-app"> 카카오내비
+        </a>
+    </div>
+
+    <div class="transport-info">
+        <div class="trans-item">
+            <div class="trans-label">
+                <span class="icon-emoji">🚇</span> 지하철
+            </div>
+            <div class="trans-desc">
+                지하철 5호선 양평역 2번출구 직진 3분거리
+            </div>
+        </div>
+        
+        <div class="trans-item">
+            <div class="trans-label">
+                <span class="icon-emoji">🚌</span> 버스
+            </div>
+            <div class="trans-desc">
+                관악고등학교 정류소 하차<br>
+                <span>640, 650, 5012, 6630번 버스</span>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</body>
+</html>

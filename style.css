@@ -1,0 +1,366 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9f6f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Shilla';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureB-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* 모바일 화면 컨테이너 (폰 규격에 맞춤) */
+.main_container {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    background: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 10px;
+}
+
+.main_txt {
+    margin: 150px 0;
+}
+
+.main_title {
+    font-size: 40px;
+    font-weight: bold; 
+    color: #505050;
+    margin-bottom: 150px;
+    font-family: 'Shilla';
+    line-height: 55px;
+}
+
+.main_title span {
+    color: #bd7b7b;
+}
+
+.sub_title {
+    font-size: 14px;
+    color: #bd7b7b;
+    /* letter-spacing: 2px; */
+    margin-bottom: 155px;
+}
+
+.bg_img {
+    width: 450px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+}
+
+h2 {
+    color: #bd7b7b;
+    margin-bottom: 20px;
+}
+.greeting_text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    word-break: keep-all;
+}
+
+.event_header {
+    font-size: 18px;
+    color: #7b8b99;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.calendar_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.calendar_table th, .calendar_table td {
+    width: 14.28%;
+    padding: 15px 0;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.calendar_table th {
+    font-weight: normal;
+    color: #777777;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.calendar_table th:first-child, 
+.calendar_table td:first-child {
+    color: #d9534f;
+}
+
+.calendar_table td {
+    color: #555555;
+}
+
+.calendar_table td.highlight .date_num {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffe3e3;
+    color: #333333;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.countdown_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto 20px;
+    max-width: 360px;
+}
+
+.time_box {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    width: 75px;
+    padding: 12px 0;
+}
+
+.time_num {
+    font-size: 24px;
+    color: #333333;
+    font-weight: 400;
+}
+
+.time_label {
+    font-size: 11px;
+    color: #a0aec0;
+    margin-top: 4px;
+}
+
+.dday_message {
+    font-size: 18px;
+    color: #555555;
+    margin-top: 20px;
+    word-break: keep-all;
+}
+
+.dday_message span {
+    color: #e29a9a;
+    font-weight: bold;
+}
+
+
+/* 오시는 길 전체 컨테이너 */
+.map-container {
+    max-width: 450px;
+    width: 100%;
+    margin: 40px auto 20px;
+    padding: 20px;
+    text-align: center;
+    color: #555555;
+}
+
+/* 섹션 타이틀 (오시는 길) */
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e29a9a; /* 이미지 특유의 부드러운 핑크톤 */
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* 주소 텍스트 영역 */
+.address-info {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.addr-main {
+    font-size: 17px;
+    color: #4a4a4a;
+    margin: 0 0 4px 0;
+}
+
+.addr-sub {
+    font-size: 16px;
+    color: #555555;
+    margin: 0 0 6px 0;
+}
+
+.addr-tel {
+    font-size: 15px;
+    color: #777777;
+    margin: 0;
+}
+
+/* 지도 이미지 및 내부 요소 */
+.map-image-wrap {
+    position: relative;
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.map-img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* 네이버 지도 UI 요소 재현 */
+.map-toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    display: flex;
+    font-size: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.map-toggle-btn .btn-item {
+    padding: 4px 8px;
+    cursor: pointer;
+    color: #333;
+}
+
+.map-toggle-btn .btn-item.active {
+    background: #38761d; /* 네이버 지도 특유의 푸른/녹색 계열 활성화 버튼 */
+    color: #fff;
+}
+
+.map-attribution {
+    position: absolute;
+    bottom: 5px;
+    left: 8px;
+    font-size: 10px;
+    color: #666;
+    background: rgba(255,255,255,0.7);
+    padding: 1px 4px;
+}
+
+.map-scale {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+    font-size: 10px;
+    color: #333;
+    border-bottom: 2px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    padding: 0 15px;
+    background: rgba(255,255,255,0.7);
+}
+
+/* 네비게이션 버튼 바 */
+.navi-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 12px 10px;
+    border-radius: 6px;
+    margin-bottom: 35px;
+}
+
+.navi-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #666666;
+    font-size: 13px;
+    gap: 6px;
+}
+
+.v-line {
+    width: 1px;
+    height: 14px;
+    background-color: #dddddd;
+}
+
+.icon-app {
+    width: 16px;
+    height: 16px;
+}
+
+/* 티맵 아이콘 커스텀 디자인 */
+.icon-tmap {
+    width: 16px;
+    height: 16px;
+    background: #114fff;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 하단 교통편 상세 정보 */
+.transport-info {
+    text-align: left;
+    padding: 0 10px;
+}
+
+.trans-item {
+    margin-bottom: 30px;
+}
+
+.trans-item:last-child {
+    margin-bottom: 0;
+}
+
+.trans-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e29a9a; /* 이미지와 동일한 연한 핑크 대분류 */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon-emoji {
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.trans-desc {
+    font-size: 14.5px;
+    color: #666666;
+    line-height: 1.6;
+    padding-left: 2px;
+}
+
+/* 버스 번호 강조 줄바꿈 스타일 */
+.trans-desc span {
+    color: #555555;
+}
