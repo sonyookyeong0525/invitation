@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCountdown();
     const timerInterval = setInterval(updateCountdown, 1000);
 
-    var mapOptions = {
+});
+
+var mapOptions = {
     center: new naver.maps.LatLng(37.3595704, 127.105399),
     zoom: 10
-    };
+};
 
-    var map = new naver.maps.Map('map', mapOptions);
-
-});
+var map = new naver.maps.Map('map', mapOptions);
